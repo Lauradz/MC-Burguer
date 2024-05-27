@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-br">
   <head>
-    <title>Loja CS TENIS :: Fechamento de Compra</title>
+    <title>MC Burguer :: Fechamento de Compra</title>
     <!-- Required meta tags -->
     <meta charset="utf-8" />
     <meta
@@ -24,7 +24,7 @@
         class="navbar navbar-expand-lg navbar-dark bg-danger border-bottom"
       >
         <div class="container">
-          <a class="navbar-brand" href="/index.html"><strong>CS Tenis</strong></a>
+          <a class="navbar-brand" href="/index.html"><strong>MC Burguer</strong></a>
           <button
             class="navbar-toggler"
             type="button"
@@ -35,19 +35,10 @@
           </button>
           <div class="navbar-collapse collapse">
             <ul class="navbar-nav flex-grow-1">
-              <li class="nav-item">
-                <a href="/index.html" class="nav-link text-white">Principal</a>
-              </li>
-              <li class="nav-item">
-                <a href="/privacidade.html" class="nav-link text-white">Política de Privacidade</a>
-              </li>
             </ul>
           
             <div class="align-self-end">
                 <ul class="navbar-nav">
-                    <li class="nav-item">
-                      <a href="#" class="nav-link text-white">Logado como <b>Cristian do Santos</b></a>
-                    </li>
                     <li class="nav-item">
                       <a href="/login.html" class="nav-link text-white">Sair</a>
                       </li>
@@ -69,110 +60,94 @@
       <!--Conteudo-->
       <main class="flex-fill">
         <div class="container">
-          <h1>Selecione a Forma de Pagamento</h1>
+          <h1 class="offset-top">Selecione a Forma de Pagamento</h1>
           <h4 class="mb-4">
             Selecione a forma de pagamento e clique em <b>Continuar</b>
             para prosseguir para a <b>concluir o pedido</b>.
           </h4>
           <div class="d-flex justify-content-between flex-wrap border rounded-top pt-4 px-3">
-            <!--Pagar no cartão-->
-            <div class="mb-4 mx-2 flex-even">
-              <input type="radio" class="btn-check" name="pagamento" id="pag1" autocomplete="off">
-              <label class="btn btn-outline-danger p-4 h-100 w-100" for="pag1">
-                <h3>
-                  <b class="text-dark">Cartão de Crédito</b>
-                </h3>
-                  <hr>
-                  <form action="">
-                    <div class="form-floating mb-3">
-                      <input type="text" id="txtNome" class="form-control" placeholder=" " autofocus>
-                      <label for="txtNome" class="text-black-50">Nome Impresso no Cartão</label>
-                    </div>
+            <div class="mb-4 mx-2 flex-even w-100">
+              <form action="">
+                <div class="form-floating mb-3">
+                  <select class="form-select" id="formaPagamento">
+                    <option value="cartao">Cartão</option>
+                    <option value="dinheiro">Dinheiro</option>
+                  </select>
+                  <label for="formaPagamento" class="text-black-50">Forma de Pagamento</label>
+                </div>
+                <!-- Se a opção "Cartão" for selecionada -->
+                <div id="cartao" style="display: none;">
+                  <div class="form-floating mb-3">
+                    <input type="text" id="txtNome" class="form-control" placeholder=" " autofocus>
+                    <label for="txtNome" class="text-black-50">Nome Impresso no Cartão</label>
+                  </div>
 
-                    <div class="form-floating mb-3">
-                      <input type="text" id="txtNumero" class="form-control" placeholder=" " autofocus>
-                      <label for="txtNumero" class="text-black-50">Número do Cartão</label>
-                    </div>
+                  <div class="form-floating mb-3">
+                    <input type="text" id="txtNumero" class="form-control" placeholder=" " autofocus>
+                    <label for="txtNumero" class="text-black-50">Número do Cartão</label>
+                  </div>
 
-                    <div class="form-floating mb-3">
-                      <input type="text" id="txtValidade" class="form-control" placeholder=" " autofocus>
-                      <label for="txtValidade" class="text-black-50">Válidade (mm/aa)</label>
-                    </div>
+                  <div class="form-floating mb-3">
+                    <input type="text" id="txtValidade" class="form-control" placeholder=" " autofocus>
+                    <label for="txtValidade" class="text-black-50">Válidade (mm/aa)</label>
+                  </div>
 
-                    <div class="form-floating mb-3">
-                      <input type="text" id="txtCodigo" class="form-control" placeholder=" " autofocus>
-                      <label for="txtCodigo" class="text-black-50">Código de Segurança</label>
-                    </div>
+                  <div class="form-floating mb-3">
+                    <input type="text" id="txtCodigo" class="form-control" placeholder=" " autofocus>
+                    <label for="txtCodigo" class="text-black-50">Código de Segurança</label>
+                  </div>
 
-                    <div class="form-floating">
-                      <select class="form-select" id="selParcelas">
-                        <option value="1" selected>À vista</option>
-                        <option value="2">2 x sem juros</option>
-                        <option value="3">3 x sem juros</option>
-                        <option value="4">4 x sem juros</option>
-                        <option value="5">5 x sem juros</option>
-                        <option value="6">6 x sem juros</option>
-                      </select>
-                      <label for="selParcelas" class="text-black-50">Parcelamento</label>
-                    </div>
-                  </form>
-              </label>
-            </div>
-             <!--Pagar com dinheiro-->
-             <div class="mb-4 mx-2 flex-even">
-              <input type="radio" class="btn-check" name="pagamento" id="pag2" autocomplete="off">
-              <label class="btn btn-outline-danger p-4 h-100 w-100" for="pag2">
-                <h3>
-                  <b class="text-dark">Dinheiro</b>
-                </h3>
-                  <hr>
-                  <form action="">
-                    <h4>Valor da Compra: <b>R$349,50</b></h4>
-                    <br>
-                    <p>
-                      Se precisar de troco, informe no campo abaixo.  
-                    </p>
-                    <div class="form-floating mb-3">
-                      <input type="text" id="txtTroco" class="form-control" placeholder=" " autofocus>
-                      <label for="txtTroco" class="text-black-50">Precisa de troco para quanto?</label>
-                    </div>
-                  </form>
-              </label>
+                  <div class="form-floating">
+                    <select class="form-select" id="selParcelas">
+                      <option value="1" selected>À vista</option>
+                      <option value="2">2 x sem juros</option>
+                      <option value="3">3 x sem juros</option>
+                      <option value="4">4 x sem juros</option>
+                      <option value="5">5 x sem juros</option>
+                      <option value="6">6 x sem juros</option>
+                    </select>
+                    <label for="selParcelas" class="text-black-50">Parcelamento</label>
+                  </div>
+                </div>
+                <!-- Se a opção "Dinheiro" for selecionada -->
+                <div id="dinheiro" style="display: none;">
+                  <h4>Valor da Compra: <b>R$99,50</b></h4>
+                  <br>
+                  <p>
+                    Se precisar de troco, informe no campo abaixo.
+                  </p>
+                  <div class="form-floating mb-3">
+                    <input type="text" id="txtTroco" class="form-control" placeholder=" " autofocus>
+                    <label for="txtTroco" class="text-black-50">Precisa de troco para quanto?</label>
+                  </div>
+                </div>
+              </form>
             </div>
           </div>
           <div class="text-end border border-top-0 rounded-bottom p-4 pb-0">
-            <a href="/fechamento_endereco.html" class="btn btn-outline-success btn-lg mb-3">Voltar aos Endereços</a>
             <a href="/fechamento_pedido.html" class="btn btn-danger btn-lg ms-2 mt-xs-3 mb-3">Finalizar</a>
           </div>
         </div>
       </main>
-      <!--Footer-->
-      <footer class="border-top text-muted bg-light">
-        <div class="container">
-          <div class="row py-3">
-            <div class="col-12 col-md-4 text-center mb-3">
-              &copy; 2022 - CS Tenis Ltda ME<br>
-              Rua Virtual Inexistente, 171, Joinville/SC<br>
-              CNPJ 99.999.999/0001-99
-            </div>
-            <div class="col-12 col-md-4 text-center mb-3">
-              <a href="/privacidade.html" class="text-decoration-none text-dark">Política de Privacidade</a> <br>
-              <a href="/termos.html" class="text-decoration-none text-dark">Termos de Uso</a> <br>
-              <a href="/quemsomos.html" class="text-decoration-none text-dark">Quem Somos</a> <br>
-              <a href="/trocas.html" class="text-decoration-none text-dark">Trocas e Devoluções</a>
-            </div>
-            <div class="col-12 col-md-4 text-center">
-              <a href="/contato.html" class="text-decoration-none text-dark">Contato pelo Site</a><br>
-              E-mail: <a href="cristiandosantos71@gmail.com" class="text-decoration-none text-dark">cristiandosantos71@gmail.com</a><br>
-              Telefone: <a href="phone:47999673241" class="text-decoration-none text-dark">(47) 9 9967-3241</a>
-            </div>
-            
-          </div>
-        </div>
-      </footer>
   </div>
     <!-- Bootstrap JavaScript Libraries -->
     
     <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+    <script>
+      document.getElementById('formaPagamento').addEventListener('change', function() {
+        var cartao = document.getElementById('cartao');
+        var dinheiro = document.getElementById('dinheiro');
+        if (this.value === 'cartao') {
+          cartao.style.display = 'block';
+          dinheiro.style.display = 'none';
+        } else if (this.value === 'dinheiro') {
+          cartao.style.display = 'none';
+          dinheiro.style.display = 'block';
+        } else {
+          cartao.style.display = 'none';
+          dinheiro.style.display = 'none';
+        }
+      });
+    </script>
   </body>
 </html>
